@@ -9,6 +9,7 @@ package com.mycompany.arraylistlesson;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
 
 /**
  *
@@ -25,7 +26,24 @@ public class ArrayListLesson {
        
        for(List myRecords : complexArray){
            System.out.println(
-           myRecords.get(0)+" "+myRecords.get(1)+" "+myRecords.get(2));
+           myRecords.get(0)+" "+myRecords.get(1));
        }
+   Scanner myKeyboard = new Scanner(System.in);
+       
+        System.out.println("Enter name to find weight");
+        String name=myKeyboard.nextLine();
+        
+        System.out.println("I'm searching "+name+ " weight");
+        
+        complexArray.forEach(arrayName->{
+            
+            if(arrayName.get(0).equals(name)){
+                System.out.println("I found the person...");
+                System.out.println(name+ " is weighting"+arrayName.get(2)+ " Kg");
+                System.exit(0);
+            }else{
+                System.out.println("This person is not found yet");
+            }
+            });
     }
 }
